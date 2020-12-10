@@ -1,0 +1,74 @@
+#app {
+  width: 1000px;
+  margin: 30px auto;
+}
+
+.title {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+thead tr {
+  background-color: #b9b9b9;
+  text-align: center;
+  height: 40px;
+  color: black;
+  cursor: pointer;
+}
+
+.add {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin: 20px auto;
+  width: 150px;
+}
+
+.search {
+  background-color: #f0f0f0;
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 10px;
+  margin: 20px auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+}
+
+.addField {
+  background-color: #f0f0f0;
+  width: 800px;
+  font-size: 20px;
+  padding: 8px 10px;
+  margin: 20px auto;
+}
+
+input {
+  border: 2px solid #f0f0f0;
+  display: block;
+  padding: 10px;
+  width: 100%;
+}
+
+input.row {
+  border: 0;
+  text-align: center;
+}

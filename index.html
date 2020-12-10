@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Task</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="h1 title">Тестовое задание</div>
+      <grid-template :tasks="tasks" :columns="columns"></grid-template>
+    </div>
+    <template id="grid-template">
+      <div>
+        <div>
+          <input class="search" placeholder="Поиск" v-model="search" />
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Номер</th>
+              <th v-on:click="sort='name'" title="Sorting">Задача</th>
+              <th v-on:click="sort='date'" title="Sorting">Дата</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, index) in filtered">
+              <div v-for="(item,index) in sorted">
+                <td>{{ index+1 }}</td>
+                <td>
+                  <input class="row" type="text" v-model="item.name" />
+                </td>
+                <td>
+                  <input class="row" type="text" v-model="item.date" />
+                </td>
+                <td>
+                  <button v-on:click="remove(index)" class="btn btn-danger">
+                    Удалить
+                  </button>
+                </td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <div class="field">
+            <input
+              v-model="task.name"
+              placeholder="Введите название задачи"
+              class="addField"
+            />
+            <button class="add" v-on:click="add">Добавить</button>
+          </div>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
